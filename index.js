@@ -66,3 +66,28 @@ console.log(
   linkedList.insertAt(69, 300),
   `\n${linkedList.toString()}`,
 );
+console.log(
+  'Remove at -300',
+  linkedList.removeAt(69, 300),
+  `\n${linkedList.toString()}`,
+);
+console.log(
+  'Remove at 1',
+  linkedList.removeAt(1).value,
+  `\n${linkedList.toString()}`,
+);
+console.log(
+  `Remove at ${linkedList.size() - 1}`,
+  linkedList.removeAt(linkedList.size() - 1).value,
+  `\n${linkedList.toString()}`,
+);
+console.log(
+  'Remove at 0',
+  linkedList.removeAt(0).value,
+  `\n${linkedList.toString()}`,
+);
+console.log(
+  'Remove at 0',
+  linkedList.removeAt(0),
+  `\n${linkedList.toString()}`,
+);
