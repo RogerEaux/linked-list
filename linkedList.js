@@ -21,15 +21,15 @@
 
 // * popFirst remove the first element from the list
 
-// contains(value) returns true if the passed in value is in the list and otherwise returns false.
+// * contains(value) returns true if the passed in value is in the list and otherwise returns false.
 
 // find(value) returns the index of the node containing value, or null if not found.
 
 import createNode from './node.js';
 
-function createLinkedList(value) {
+function createLinkedList(initialValue) {
   let listSize = 1;
-  let listHead = createNode(value);
+  let listHead = createNode(initialValue);
   let listTail = listHead;
 
   function size() {
@@ -44,11 +44,11 @@ function createLinkedList(value) {
     return listTail;
   }
 
-  function prepend(val) {
+  function prepend(value) {
     if (listHead) {
-      listHead = createNode(val, listHead);
+      listHead = createNode(value, listHead);
     } else {
-      listHead = createNode(val);
+      listHead = createNode(value);
       listTail = listHead;
     }
     listSize += 1;
@@ -56,12 +56,12 @@ function createLinkedList(value) {
     return listHead;
   }
 
-  function append(val) {
+  function append(value) {
     if (listTail) {
-      listTail.next = createNode(val);
+      listTail.next = createNode(value);
       listTail = listTail.next;
     } else {
-      listHead = createNode(val);
+      listHead = createNode(value);
       listTail = listHead;
     }
     listSize += 1;
@@ -109,10 +109,10 @@ function createLinkedList(value) {
     return popped;
   }
 
-  function contains(val) {
+  function contains(value) {
     let current = listHead;
     while (current !== null) {
-      if (current.value === val) return true;
+      if (current.value === value) return true;
       current = current.next;
     }
 
