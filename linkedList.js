@@ -1,10 +1,10 @@
 // Props
 
-// size returns the total number of nodes in the list
+// * size returns the total number of nodes in the list
 
-// head returns the first node in the list
+// * head returns the first node in the list
 
-// tail returns the last node in the list
+// * tail returns the last node in the list
 
 // Functions
 
@@ -30,6 +30,18 @@ function createLinkedList() {
   let listHead = createNode();
   let listTail = listHead;
 
+  function toString() {
+    let current = listHead;
+    let stringified = `(${current.value})`;
+
+    for (let i = 1; i < listSize; i += 1) {
+      stringified += `-> (${current.value})`;
+      current = current.next;
+    }
+
+    return `${stringified} -> null`;
+  }
+
   return {
     get size() {
       return listSize;
@@ -42,6 +54,8 @@ function createLinkedList() {
     get tail() {
       return listTail;
     },
+
+    toString,
   };
 }
 
