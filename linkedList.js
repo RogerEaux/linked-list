@@ -32,14 +32,14 @@ function createLinkedList(value) {
 
   function toString() {
     let current = listHead;
-    let stringified = `(${current.value})`;
+    let stringified = '';
 
-    for (let i = 1; i < listSize; i += 1) {
-      stringified += `-> (${current.value})`;
+    while (current !== null) {
+      stringified += `(${current.value}) ->`;
       current = current.next;
     }
 
-    return `${stringified} -> null`;
+    return `${stringified} null`;
   }
 
   return {
