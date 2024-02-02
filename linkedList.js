@@ -13,9 +13,9 @@
 
 // * prepend(value) adds a new node containing value to the start of the list
 
-// append(value) adds a new node containing value to the end of the list
+// * append(value) adds a new node containing value to the end of the list
 
-// at(index) returns the node at the given index
+// * at(index) returns the node at the given index
 
 // pop removes the last element from the list
 
@@ -53,6 +53,18 @@ function createLinkedList(value) {
     listSize += 1;
   }
 
+  function at(index) {
+    if (index > listSize - 1 || index < 0) {
+      return null;
+    }
+    let current = listHead;
+
+    for (let i = 0; i !== index; i += 1) {
+      current = current.next;
+    }
+    return current;
+  }
+
   function toString() {
     let current = listHead;
     let stringified = '';
@@ -73,6 +85,7 @@ function createLinkedList(value) {
     toString,
     prepend,
     append,
+    at,
   };
 }
 
