@@ -17,7 +17,7 @@
 
 // * at(index) returns the node at the given index
 
-// pop removes the last element from the list
+// * pop removes the last element from the list
 
 // contains(value) returns true if the passed in value is in the list and otherwise returns false.
 
@@ -74,7 +74,7 @@ function createLinkedList(value) {
 
     let popped;
 
-    if (listHead.next === null) {
+    if (listSize === 1) {
       popped = listHead;
       listHead = null;
       listTail = null;
@@ -87,6 +87,23 @@ function createLinkedList(value) {
       popped = current.next;
       current.next = null;
       listTail = current;
+    }
+
+    listSize -= 1;
+
+    return popped;
+  }
+
+  function popFirst() {
+    if (listSize === 0) {
+      return null;
+    }
+
+    const popped = listHead;
+
+    listHead = listHead.next;
+    if (listSize === 1 || listSize === 2) {
+      listTail = listHead;
     }
 
     listSize -= 1;
@@ -128,6 +145,7 @@ function createLinkedList(value) {
     append,
     at,
     pop,
+    popFirst,
   };
 }
 
