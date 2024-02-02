@@ -43,15 +43,25 @@ function createLinkedList(value) {
   }
 
   function prepend(val) {
-    listHead = createNode(val, listHead);
+    if (listHead) {
+      listHead = createNode(val, listHead);
+    } else {
+      listHead = createNode(val);
+      listTail = listHead;
+    }
     listSize += 1;
 
     return listHead;
   }
 
   function append(val) {
-    listTail.next = createNode(val);
-    listTail = listTail.next;
+    if (listTail) {
+      listTail.next = createNode(val);
+      listTail = listTail.next;
+    } else {
+      listHead = createNode(val);
+      listTail = listHead;
+    }
     listSize += 1;
 
     return listTail;
@@ -78,6 +88,8 @@ function createLinkedList(value) {
       current.next = null;
       listTail = current;
     }
+
+    listSize -= 1;
 
     return popped;
   }
