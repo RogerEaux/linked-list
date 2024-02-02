@@ -11,7 +11,7 @@
 // * toString represents your LinkedList objects as strings, so you can print them out and preview
 // them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
 
-// prepend(value) adds a new node containing value to the start of the list
+// * prepend(value) adds a new node containing value to the start of the list
 
 // append(value) adds a new node containing value to the end of the list
 
@@ -30,6 +30,29 @@ function createLinkedList(value) {
   let listHead = createNode(value);
   let listTail = listHead;
 
+  function size() {
+    return listSize;
+  }
+
+  function head() {
+    return listHead;
+  }
+
+  function tail() {
+    return listTail;
+  }
+
+  function prepend(val) {
+    listHead = createNode(val, listHead);
+    listSize += 1;
+  }
+
+  function append(val) {
+    listTail.next = createNode(val);
+    listTail = listTail.next;
+    listSize += 1;
+  }
+
   function toString() {
     let current = listHead;
     let stringified = '';
@@ -43,23 +66,13 @@ function createLinkedList(value) {
     return stringified;
   }
 
-  function size() {
-    return listSize;
-  }
-
-  function head() {
-    return listHead;
-  }
-
-  function tail() {
-    return listTail;
-  }
-
   return {
     size,
     head,
     tail,
     toString,
+    prepend,
+    append,
   };
 }
 
