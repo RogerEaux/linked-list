@@ -45,12 +45,16 @@ function createLinkedList(value) {
   function prepend(val) {
     listHead = createNode(val, listHead);
     listSize += 1;
+
+    return listHead;
   }
 
   function append(val) {
     listTail.next = createNode(val);
     listTail = listTail.next;
     listSize += 1;
+
+    return listTail;
   }
 
   function at(index) {
