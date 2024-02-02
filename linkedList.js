@@ -35,11 +35,12 @@ function createLinkedList(value) {
     let stringified = '';
 
     while (current !== null) {
-      stringified += `(${current.value}) ->`;
+      stringified += `(${current.value}) -> `;
       current = current.next;
     }
+    stringified += 'null';
 
-    return `${stringified} null`;
+    return stringified;
   }
 
   return {
