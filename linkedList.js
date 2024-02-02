@@ -125,7 +125,16 @@ function createLinkedList(initialValue) {
   }
 
   function removeAt(index) {
-    // removeAt(index) that removes the node at the given index.
+    if (index > listSize - 1 || index < 0) return null;
+    if (index === 0) return popFirst();
+    if (index === listSize - 1) return pop();
+
+    const previous = at(index - 1);
+    const popped = previous.next;
+    previous.next = previous.next.next;
+    listSize -= 1;
+
+    return popped;
   }
 
   function toString() {
