@@ -57,6 +57,31 @@ function createLinkedList(value) {
     return listTail;
   }
 
+  function pop() {
+    if (listSize === 0) {
+      return null;
+    }
+
+    let popped;
+
+    if (listHead.next === null) {
+      popped = listHead;
+      listHead = null;
+      listTail = null;
+    } else {
+      let current = listHead;
+
+      while (current.next !== listTail) {
+        current = current.next;
+      }
+      popped = current.next;
+      current.next = null;
+      listTail = current;
+    }
+
+    return popped;
+  }
+
   function at(index) {
     if (index > listSize - 1 || index < 0) {
       return null;
@@ -90,6 +115,7 @@ function createLinkedList(value) {
     prepend,
     append,
     at,
+    pop,
   };
 }
 
