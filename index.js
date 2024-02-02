@@ -46,3 +46,23 @@ console.log(
 );
 console.log('Contains 42', linkedList.contains(42));
 console.log('Contains null', linkedList.contains(null));
+console.log(
+  'Insert at 0',
+  linkedList.insertAt(42, 0).value,
+  `\n${linkedList.toString()}`,
+);
+console.log(
+  'Insert at 0',
+  linkedList.insertAt(13, 0).value,
+  `\n${linkedList.toString()}`,
+);
+console.log(
+  `Insert at ${linkedList.size()}`,
+  linkedList.insertAt(69, linkedList.size()).value,
+  `\n${linkedList.toString()}`,
+);
+console.log(
+  'Insert at -300',
+  linkedList.insertAt(69, 300),
+  `\n${linkedList.toString()}`,
+);

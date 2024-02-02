@@ -112,6 +112,22 @@ function createLinkedList(initialValue) {
     return current;
   }
 
+  function insertAt(value, index) {
+    if (index > listSize || index < 0) return null;
+    if (index === 0) return prepend(value);
+    if (index === listSize) return append(value);
+
+    const previous = at(index - 1);
+    previous.next = createNode(value, previous.next);
+    listSize += 1;
+
+    return previous.next;
+  }
+
+  function removeAt(index) {
+    // removeAt(index) that removes the node at the given index.
+  }
+
   function toString() {
     let current = listHead;
     let stringified = '';
@@ -137,6 +153,8 @@ function createLinkedList(initialValue) {
     popFirst,
     contains,
     find,
+    insertAt,
+    removeAt,
   };
 }
 
