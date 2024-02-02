@@ -1,6 +1,13 @@
 import createLinkedList from './linkedList.js';
 
-const linkedList = createLinkedList(42);
+const linkedList = createLinkedList();
+
+console.log(linkedList.toString());
+console.log(
+  'Prepend',
+  linkedList.prepend(42).value,
+  `\n${linkedList.toString()}`,
+);
 
 console.log('Size', linkedList.size());
 console.log('Head', linkedList.head().value);

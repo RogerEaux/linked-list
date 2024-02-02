@@ -1,9 +1,9 @@
 import createNode from './node.js';
 
-function createLinkedList(initialValue) {
-  let listSize = 1;
-  let listHead = createNode(initialValue);
-  let listTail = listHead;
+function createLinkedList() {
+  let listSize = 0;
+  let listHead = null;
+  let listTail = null;
 
   function size() {
     return listSize;
