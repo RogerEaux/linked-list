@@ -43,19 +43,22 @@ function createLinkedList(value) {
     return stringified;
   }
 
+  function size() {
+    return listSize;
+  }
+
+  function head() {
+    return listHead;
+  }
+
+  function tail() {
+    return listTail;
+  }
+
   return {
-    get size() {
-      return listSize;
-    },
-
-    get head() {
-      return listHead;
-    },
-
-    get tail() {
-      return listTail;
-    },
-
+    size,
+    head,
+    tail,
     toString,
   };
 }
