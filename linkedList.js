@@ -8,7 +8,7 @@
 
 // Functions
 
-// toString represents your LinkedList objects as strings, so you can print them out and preview
+// * toString represents your LinkedList objects as strings, so you can print them out and preview
 // them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
 
 // prepend(value) adds a new node containing value to the start of the list
@@ -25,9 +25,9 @@
 
 import createNode from './node.js';
 
-function createLinkedList() {
+function createLinkedList(value) {
   let listSize = 1;
-  let listHead = createNode();
+  let listHead = createNode(value);
   let listTail = listHead;
 
   function toString() {
