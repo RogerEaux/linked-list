@@ -25,6 +25,24 @@
 
 import createNode from './node.js';
 
-function createLinkedList() {}
+function createLinkedList() {
+  let listSize = 1;
+  let listHead = createNode();
+  let listTail = listHead;
+
+  return {
+    get size() {
+      return listSize;
+    },
+
+    get head() {
+      return listHead;
+    },
+
+    get tail() {
+      return listTail;
+    },
+  };
+}
 
 export default createLinkedList;
